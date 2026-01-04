@@ -4,21 +4,25 @@
   "description": "AI-powered calorie tracking PWA with Claude integration",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
-    "dev:client": "cd client && vite",
-    "dev:server": "cd server && tsx watch src/index.ts",
-    "build": "npm run build:client && npm run build:server",
+    "dev": "netlify dev",
+    "build": "npm run build:client",
     "build:client": "cd client && vite build",
-    "build:server": "cd server && tsc",
-    "start": "node server/dist/index.js",
     "preview": "cd client && vite preview"
   },
   "workspaces": [
     "client",
-    "server",
     "shared"
   ],
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.0",
+    "firebase": "^10.7.1",
+    "firebase-admin": "^12.0.0"
+  },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "@netlify/functions": "^2.4.1",
+    "@types/node": "^20.10.5",
+    "concurrently": "^8.2.2",
+    "netlify-cli": "^17.10.1",
+    "typescript": "^5.3.3"
   }
 }

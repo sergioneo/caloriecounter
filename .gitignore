@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .env
+.env.local
 *.log
 .DS_Store
 coverage/
@@ -10,13 +11,16 @@ coverage/
 *.swo
 *~
 
-# Database
-server/data/*.db
-server/data/*.db-*
+# Netlify
+.netlify/
+netlify/functions/dist/
+
+# Firebase
+.firebase/
+.firebaserc
 
 # Build outputs
 client/dist/
-server/dist/
 
 # Dependency directories
 package-lock.json

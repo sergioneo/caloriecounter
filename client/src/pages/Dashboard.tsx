@@ -57,7 +57,20 @@ export function Dashboard() {
         return;
       }
 
-      await addEntry(selectedMealType, foods, capturedImage || undefined);
+      // Upload image to Firebase Storage if present
+      let imageUrl: string | undefined;
+      if (capturedImage) {
+        setIsAnalyzing(true);
+        try {
+          imageUrl = await api.uploadImage(capturedImage);
+        } catch (error) {
+          console.error('Image upload failed:', error);
+        } finally {
+          setIsAnalyzing(false);
+        }
+      }
+
+      await addEntry(selectedMealType, foods, imageUrl);
       setView('dashboard');
       setCapturedImage(null);
       setRecognizedFoods(null);

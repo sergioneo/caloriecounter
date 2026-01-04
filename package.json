@@ -1,0 +1,24 @@
+{
+  "name": "caloriecounter-pwa",
+  "version": "1.0.0",
+  "description": "AI-powered calorie tracking PWA with Claude integration",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "cd client && vite",
+    "dev:server": "cd server && tsx watch src/index.ts",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cd client && vite build",
+    "build:server": "cd server && tsc",
+    "start": "node server/dist/index.js",
+    "preview": "cd client && vite preview"
+  },
+  "workspaces": [
+    "client",
+    "server",
+    "shared"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

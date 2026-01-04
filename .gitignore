@@ -1,0 +1,24 @@
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+coverage/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Database
+server/data/*.db
+server/data/*.db-*
+
+# Build outputs
+client/dist/
+server/dist/
+
+# Dependency directories
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

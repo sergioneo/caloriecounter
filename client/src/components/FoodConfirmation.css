@@ -1,0 +1,140 @@
+.food-confirmation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--background);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.confirmation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--surface);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.confirmation-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.food-image {
+  margin-bottom: 1rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.food-image img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.clarifications-section {
+  margin-bottom: 1rem;
+}
+
+.clarifications-section h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.clarification-question {
+  margin-bottom: 1rem;
+}
+
+.clarification-question label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.foods-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.food-item-card {
+  padding: 1rem;
+}
+
+.food-item-header {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.food-name-input {
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.btn-remove {
+  background: var(--error);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.portion-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.quantity-input {
+  width: 80px;
+}
+
+.unit-input {
+  flex: 1;
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.nutrition-item label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.nutrition-item input {
+  width: 100%;
+}
+
+.confirmation-footer {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--surface);
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-footer .btn {
+  flex: 1;
+}

@@ -1,0 +1,87 @@
+.history-page {
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.history-header {
+  background: var(--surface);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.history-header h1 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.time-range-selector {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--background);
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+.range-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  background: transparent;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.range-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.history-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.averages-card h3,
+.chart-card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.averages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.avg-item {
+  text-align: center;
+}
+
+.avg-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.avg-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.chart-card {
+  padding: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .averages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

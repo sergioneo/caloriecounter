@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="100" fill="#10b981"/>
+  <circle cx="256" cy="220" r="120" fill="white" opacity="0.3"/>
+  <path d="M 256 140 L 276 200 L 336 200 L 288 236 L 308 296 L 256 260 L 204 296 L 224 236 L 176 200 L 236 200 Z" fill="white"/>
+  <text x="256" y="390" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="white" text-anchor="middle">Cal</text>
+</svg>

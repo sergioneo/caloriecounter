@@ -44,7 +44,8 @@ An AI-powered Progressive Web App for calorie tracking and nutritional analysis 
 
 2. Enable Authentication:
    - Go to Authentication > Sign-in method
-   - Enable Email/Password
+   - Enable **Email/Password**
+   - Enable **Google** (click Google → Enable → Save)
 
 3. Create Firestore database:
    - Go to Firestore Database

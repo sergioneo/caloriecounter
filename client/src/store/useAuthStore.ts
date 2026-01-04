@@ -2,6 +2,8 @@ import { create } from 'zustand';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
   updateProfile,
@@ -15,6 +17,7 @@ interface AuthState {
   isLoading: boolean;
   error: string | null;
   login: (email: string, password: string) => Promise<void>;
+  loginWithGoogle: () => Promise<void>;
   register: (email: string, password: string, name: string) => Promise<void>;
   logout: () => Promise<void>;
   checkAuth: () => void;
@@ -43,6 +46,32 @@ export const useAuthStore = create<AuthState>((set) => ({
     } catch (error: any) {
       const errorMessage = error.code === 'auth/invalid-credential'
         ? 'Invalid email or password'
+        : error.message;
+      set({ error: errorMessage, isLoading: false });
+      throw error;
+    }
+  },
+
+  loginWithGoogle: async () => {
+    try {
+      set({ error: null, isLoading: true });
+      const provider = new GoogleAuthProvider();
+      const userCredential = await signInWithPopup(auth, provider);
+      const firebaseUser = userCredential.user;
+
+      const user: User = {
+        id: firebaseUser.uid,
+        email: firebaseUser.email!,
+        name: firebaseUser.displayName || 'User',
+        createdAt: firebaseUser.metadata.creationTime || new Date().toISOString(),
+      };
+
+      set({ user, isAuthenticated: true, isLoading: false });
+    } catch (error: any) {
+      const errorMessage = error.code === 'auth/popup-closed-by-user'
+        ? 'Sign-in popup was closed'
+        : error.code === 'auth/cancelled-popup-request'
+        ? 'Sign-in was cancelled'
         : error.message;
       set({ error: errorMessage, isLoading: false });
       throw error;
